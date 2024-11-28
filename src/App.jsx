@@ -74,30 +74,24 @@ const CoffeeBean = ({ delay }) => {
 
 function App() {
   return (
-    <div className='container'>
-      <div className='digestive-system'>
-        <div className='small-intestine'>
-          <svg width='100%' height='100%' viewBox='0 0 440 440'>
-            <defs>
-              <path id='intestinePath' d={INTESTINE_PATH} />
-            </defs>
-            <use href='#intestinePath' className='intestine-border' />
-            <use href='#intestinePath' className='intestine-path' />
+    <svg className='container' width='100%' height='100%' viewBox='0 0 440 440'>
+      <defs>
+        <path id='intestinePath' d={INTESTINE_PATH} />
+      </defs>
+      <use href='#intestinePath' className='intestine-border' />
+      <use href='#intestinePath' className='intestine-path' />
 
-            {DELAYS.map((delay, index) => (
-              <CoffeeBean key={index} delay={delay} />
-            ))}
+      {DELAYS.map((delay, index) => (
+        <CoffeeBean key={index} delay={delay} />
+      ))}
 
-            <text x='40' y='50' className='svg-emoji'>
-              {EMOJIS.CAT}
-            </text>
-            <text x='400' y='380' className='svg-emoji'>
-              {EMOJIS.COFFEE}
-            </text>
-          </svg>
-        </div>
-      </div>
-    </div>
+      <text x='40' y='50' className='svg-emoji'>
+        {EMOJIS.CAT}
+      </text>
+      <text x='400' y='380' className='svg-emoji'>
+        {EMOJIS.COFFEE}
+      </text>
+    </svg>
   )
 }
 
