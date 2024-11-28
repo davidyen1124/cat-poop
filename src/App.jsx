@@ -32,7 +32,6 @@ const CoffeeBean = ({ delay }) => {
           dur='8s'
           repeatCount='indefinite'
           begin={`${delay}s`}
-          path={INTESTINE_PATH}
           onRepeat={regenerateRandomValues}
         >
           <mpath href='#intestinePath' />
