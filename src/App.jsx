@@ -1,7 +1,7 @@
 import './App.css'
 
 const INTESTINE_PATH =
-  'M 20,30 L 350,30 Q 380,30 380,60 Q 380,80 350,80 Q 200,80 50,80 Q 20,80 20,110 Q 20,130 50,130 Q 200,130 350,130 Q 380,130 380,160 Q 380,180 350,180 Q 200,180 50,180 Q 20,180 20,210 Q 20,230 50,230 Q 200,230 350,230 Q 380,230 380,260 Q 380,280 350,280 Q 200,280 50,280 Q 20,280 20,310 Q 20,330 50,330 Q 200,330 350,330 Q 380,330 380,360'
+  'M 40,50 L 370,50 Q 400,50 400,80 Q 400,100 370,100 Q 220,100 70,100 Q 40,100 40,130 Q 40,150 70,150 Q 220,150 370,150 Q 400,150 400,180 Q 400,200 370,200 Q 220,200 70,200 Q 40,200 40,230 Q 40,250 70,250 Q 220,250 370,250 Q 400,250 400,280 Q 400,300 370,300 Q 220,300 70,300 Q 40,300 40,330 Q 40,350 70,350 Q 220,350 370,350 Q 400,350 400,380'
 
 const DELAYS = [0, 2, 4, 6]
 const EMOJIS = {
@@ -69,7 +69,7 @@ function App() {
     <div className='container'>
       <div className='digestive-system'>
         <div className='small-intestine'>
-          <svg width='100%' height='100%' viewBox='-20 -20 440 440'>
+          <svg width='100%' height='100%' viewBox='0 0 440 440'>
             <defs>
               <path id='intestinePath' d={INTESTINE_PATH} />
             </defs>
@@ -84,10 +84,10 @@ function App() {
               />
             ))}
 
-            <text x='20' y='30' className='svg-emoji'>
+            <text x='40' y='50' className='svg-emoji'>
               {EMOJIS.CAT}
             </text>
-            <text x='380' y='360' className='svg-emoji'>
+            <text x='400' y='380' className='svg-emoji'>
               {EMOJIS.COFFEE}
             </text>
           </svg>
