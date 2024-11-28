@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 const INTESTINE_PATH =
@@ -20,20 +20,32 @@ const CoffeeBean = ({ delay }) => {
   const [turnsToPoop, setTurnsToPoop] = useState(() => Math.random() < 0.3)
   const transitionEnd = (parseFloat(transitionPoint) + 0.01).toFixed(2)
 
-  const regenerateRandomValues = () => {
-    setTransitionPoint((Math.random() * 0.25 + 0.5).toFixed(2))
-    setTurnsToPoop(Math.random() < 0.3)
-  }
+  useEffect(() => {
+    const startDelay = delay * 1000
+    const animationDuration = 8000
+
+    const initialTimer = setTimeout(() => {
+      const regenerateRandomValues = () => {
+        setTransitionPoint((Math.random() * 0.25 + 0.5).toFixed(2))
+        setTurnsToPoop(Math.random() < 0.3)
+      }
+
+      const intervalId = setInterval(regenerateRandomValues, animationDuration)
+
+      return () => {
+        clearInterval(intervalId)
+      }
+    }, startDelay)
+
+    return () => {
+      clearTimeout(initialTimer)
+    }
+  }, [delay])
 
   return (
     <g>
       <text className='svg-emoji coffee-bean' dy='5'>
-        <animateMotion
-          dur='8s'
-          repeatCount='indefinite'
-          begin={`${delay}s`}
-          onRepeat={regenerateRandomValues}
-        >
+        <animateMotion dur='8s' repeatCount='indefinite' begin={`${delay}s`}>
           <mpath href='#intestinePath' />
         </animateMotion>
         <animate
