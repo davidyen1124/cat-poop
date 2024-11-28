@@ -8,12 +8,14 @@ const EMOJIS = {
   CAT: '🐱',
   COFFEE: '☕️',
   BLUEBERRY: '🫐',
-  BEAN: '🫘'
+  BEAN: '🫘',
+  POOP: '💩'
 }
 
 const CoffeeBean = ({ delay }) => {
   const transitionPoint = (Math.random() * 0.25 + 0.5).toFixed(2)
   const transitionEnd = (parseFloat(transitionPoint) + 0.01).toFixed(2)
+  const turnsToPoop = Math.random() < 0.3 // 30% chance to turn into poop
 
   return (
     <g>
@@ -46,7 +48,7 @@ const CoffeeBean = ({ delay }) => {
           />
         </tspan>
         <tspan className='bean' dx='-24'>
-          {EMOJIS.BEAN}
+          {turnsToPoop ? EMOJIS.POOP : EMOJIS.BEAN}
           <animate
             attributeName='opacity'
             values={`0;0;1;1`}
