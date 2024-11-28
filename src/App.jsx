@@ -11,7 +11,8 @@ const EMOJIS = {
   BEAN: '🫘'
 }
 
-const CoffeeBean = ({ delay, transitionPoint }) => {
+const CoffeeBean = ({ delay }) => {
+  const transitionPoint = (Math.random() * 0.25 + 0.5).toFixed(2)
   const transitionEnd = (parseFloat(transitionPoint) + 0.01).toFixed(2)
 
   return (
@@ -61,10 +62,6 @@ const CoffeeBean = ({ delay, transitionPoint }) => {
 }
 
 function App() {
-  const transitionPoints = DELAYS.map(() =>
-    (Math.random() * 0.25 + 0.5).toFixed(2)
-  )
-
   return (
     <div className='container'>
       <div className='digestive-system'>
@@ -77,11 +74,7 @@ function App() {
             <use href='#intestinePath' className='intestine-path' />
 
             {DELAYS.map((delay, index) => (
-              <CoffeeBean
-                key={index}
-                delay={delay}
-                transitionPoint={transitionPoints[index]}
-              />
+              <CoffeeBean key={index} delay={delay} />
             ))}
 
             <text x='40' y='50' className='svg-emoji'>
