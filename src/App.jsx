@@ -44,7 +44,7 @@ const CoffeeBean = ({ delay }) => {
           begin={`${delay}s`}
           fill='freeze'
         />
-        <tspan className='cherry'>
+        <tspan>
           {EMOJIS.BLUEBERRY}
           <animate
             attributeName='opacity'
@@ -55,7 +55,7 @@ const CoffeeBean = ({ delay }) => {
             repeatCount='indefinite'
           />
         </tspan>
-        <tspan className='bean' dx='-24'>
+        <tspan dx='-24'>
           {turnsToPoop ? EMOJIS.POOP : EMOJIS.BEAN}
           <animate
             attributeName='opacity'

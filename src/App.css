@@ -50,11 +50,6 @@ body {
   opacity: 0;
 }
 
-.cherry,
-.bean {
-  opacity: 1;
-}
-
 @media screen and (max-width: 768px) {
   .intestine-path {
     stroke-width: 35;
