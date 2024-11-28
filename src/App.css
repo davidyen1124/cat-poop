@@ -40,7 +40,6 @@ body {
 
 .svg-emoji {
   font-size: 24px;
-  alignment-baseline: middle;
   text-anchor: middle;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
   user-select: none;

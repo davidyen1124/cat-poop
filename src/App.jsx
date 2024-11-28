@@ -44,7 +44,7 @@ const CoffeeBean = ({ delay }) => {
 
   return (
     <g>
-      <text className='svg-emoji coffee-bean' dy='5'>
+      <text className='svg-emoji coffee-bean' dy='5' alignmentBaseline='middle'>
         <animateMotion dur='8s' repeatCount='indefinite' begin={`${delay}s`}>
           <mpath href='#intestinePath' />
         </animateMotion>
@@ -96,10 +96,10 @@ function App() {
         <CoffeeBean key={index} delay={delay} />
       ))}
 
-      <text x='40' y='50' className='svg-emoji'>
+      <text x='40' y='50' className='svg-emoji' alignmentBaseline='middle'>
         {EMOJIS.CAT}
       </text>
-      <text x='400' y='380' className='svg-emoji'>
+      <text x='400' y='380' className='svg-emoji' alignmentBaseline='middle'>
         {EMOJIS.COFFEE}
       </text>
     </svg>
