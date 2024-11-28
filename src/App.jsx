@@ -10,7 +10,7 @@ function App() {
     <div className="container">
       <div className="digestive-system">
         <div className="small-intestine">
-          <svg width="100%" height="100%" viewBox="0 0 400 400">
+          <svg width="100%" height="100%" viewBox="-20 -20 440 440">
             {/* Border path */}
             <path 
               className="intestine-border"
@@ -133,8 +133,8 @@ function App() {
               );
             })}
             {/* Emojis as SVG text */}
-            <text x="0" y="30" className="svg-emoji">🐱</text>
-            <text x="380" y="380" className="svg-emoji">☕️</text>
+            <text x="20" y="30" className="svg-emoji">🐱</text>
+            <text x="380" y="360" className="svg-emoji">☕️</text>
           </svg>
         </div>
       </div>
