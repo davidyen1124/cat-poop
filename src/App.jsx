@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 
 const INTESTINE_PATH =
@@ -13,9 +14,16 @@ const EMOJIS = {
 }
 
 const CoffeeBean = ({ delay }) => {
-  const transitionPoint = (Math.random() * 0.25 + 0.5).toFixed(2)
+  const [transitionPoint, setTransitionPoint] = useState(() =>
+    (Math.random() * 0.25 + 0.5).toFixed(2)
+  )
+  const [turnsToPoop, setTurnsToPoop] = useState(() => Math.random() < 0.3)
   const transitionEnd = (parseFloat(transitionPoint) + 0.01).toFixed(2)
-  const turnsToPoop = Math.random() < 0.3 // 30% chance to turn into poop
+
+  const regenerateRandomValues = () => {
+    setTransitionPoint((Math.random() * 0.25 + 0.5).toFixed(2))
+    setTurnsToPoop(Math.random() < 0.3)
+  }
 
   return (
     <g>
@@ -25,6 +33,7 @@ const CoffeeBean = ({ delay }) => {
           repeatCount='indefinite'
           begin={`${delay}s`}
           path={INTESTINE_PATH}
+          onRepeat={regenerateRandomValues}
         >
           <mpath href='#intestinePath' />
         </animateMotion>
