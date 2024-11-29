@@ -45,6 +45,14 @@ const CoffeeBean = ({ delay }) => {
   return (
     <g>
       <text className='svg-emoji coffee-bean' dy='5' alignmentBaseline='middle'>
+        <animateTransform
+          attributeName='transform'
+          type='rotate'
+          from='0'
+          to='360'
+          dur='2s'
+          repeatCount='indefinite'
+        />
         <animateMotion dur='8s' repeatCount='indefinite' begin={`${delay}s`}>
           <mpath href='#intestinePath' />
         </animateMotion>
